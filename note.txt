@@ -1,0 +1,75 @@
+//Main function
+
+-Item management
+  -Brand/Category/Subcategory
+
+-Sell/Shopping
+
+-Order management
+  -items/customer
+  -orders/order_detail
+
+-Customer Manage
+  -Reports
+
+order
+-voucherid,userid,orderdate,status
+
+order_detail
+-voucherid,productid,qty
+
+brands
+=>1|b1|photo
+=>2|b2|photo
+
+categories
+=>1|fashion|photo
+=>2|electronic|photo
+
+subcategories
+=>1|baby wear|1
+
+
+Homework(backend template)
+-create route for dashboard page(get)
+-create master blade(views/backendtemplate.blade.php)
+-create child blade(views/backendtemplate.dashboard.php)
+-create controller BackendController
+
+
+
+
+
+Item(CRUD->create,retrieve,update,delete)
+----------------------------------------
+create-show form,store data
+
+retrieve-display data(all,row)
+
+update-show form with old value,update data
+
+delete-deleta data
+
+
+GIT(upload project into your repo)
+---
+-git init
+-git add
+-git commit -m "message"
+-git remote add origin url
+-git push -u origin master
+
+
+GIT(clone)
+---
+-git clone url
+-cd folder
+-cp.env.example.env->(cp=copy)
+-composer install
+-php artisan key:generate
+-npm install
+-npm run dev
+
+GIT(team)
+---
+git pull

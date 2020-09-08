@@ -15,15 +15,18 @@ use Illuminate\Support\Facades\Route;
 
  Route::get('/', 'PageController@mainfun')->name('mainpage');
 
-Route::get('login','PageController@loginfun')->name('loginpage');
+// Route::get('login','PageController@loginfun')->name('loginpage');
 
 Route::get('register','PageController@registerfun')->name('registerpage');
 
-Route::get('brand','PageController@brandfun')->name('brandpage');
+Route::get('brand/{id}','PageController@brandfun')->name('brandpage');
 
-Route::get('itemdetail','PageController@itemdetailfun')->name('itemdetailpage');
+Route::get('itemdetail/{id}','PageController@itemdetailfun')->name('itemdetailpage');
 
-Route::get('promotion','PageController@promotionfun')->name('promotionpage');
+// Route::get('itemsbycategory/{id}','PageController@itemsbycategoryfun')->name('itemsbycategorypage');
+
+
+Route::get('promotion/{id}','PageController@promotionfun')->name('promotionpage');
 
 Route::get('shoppingcart','PageController@shoppingcartfun')->name('shoppingcartpage');
 

@@ -26,7 +26,11 @@
 					<td>
 						<a href="" class="btn btn-info">Detail</a>
 						<a href="{{route('categories.edit',$category->id)}}" class="btn btn-warning">Edit</a>
-						<a href="" class="btn btn-danger">Delete</a>
+						<form action="{{route('categories.destroy',$category->id)}}" onsubmit="return confirm('Are you sure to delete?')" class="d-inline-block" method="POST">
+							@csrf
+							@method("DELETE")
+							<button class="btn btn-danger" type="submit">DELETE</button>
+						</form>
 					</td>
 				</tr>
 				@endforeach

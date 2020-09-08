@@ -117,6 +117,8 @@ class CategoryController extends Controller
      */
     public function destroy(Category $category)
     {
-        //
+        // dd($category);
+        $category->delete();
+        return redirect()->route('categories.index');
     }
 }

@@ -128,6 +128,8 @@ class SubcategoryController extends Controller
      */
     public function destroy(Subcategory $subcategory)
     {
-        //
+       // dd($subcategory);
+        $subcategory->delete();
+        return redirect()->route('subcategories.index');
     }
 }

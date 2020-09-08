@@ -3,7 +3,7 @@
 @section('content')
 	<div class="jumbotron jumbotron-fluid subtitle">
   		<div class="container">
-    		<h1 class="text-center text-white"> Code Number </h1>
+    		<h1 class="text-center text-white"> Code Number:{{$item->codeno}} </h1>
   		</div>
 	</div>
 	
@@ -64,7 +64,7 @@
 
 				<p> 
 					<span class="text-uppercase "> Brand : </span>
-					<span class="ml-3"> <a href="" class="text-decoration-none text-muted"> Brand Name </a> </span>
+					<span class="ml-3"> <a href="" class="text-decoration-none text-muted"> {{$item->brand->name}} </a> </span>
 				</p>
 
 

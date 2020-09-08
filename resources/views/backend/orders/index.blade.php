@@ -7,6 +7,19 @@
     <div class="row">
       <div class="col-md-12 mb-3">
         <h1 class="h3 mb-0 text-gray-800 d-inline-block">Order List</h1>
+        <form method="get" action="{{route('orders.index')}}" class="mt-2">
+          <div class="form-row">
+            <div class="col">
+              <input type="date" class="form-control" placeholder="Start Date" name="sdate">
+            </div>
+            <div class="col">
+              <input type="date" class="form-control" placeholder="End Date" name="edate">
+            </div>
+            <div class="col">
+              <input type="submit" class="btn btn-success" value="Search">
+            </div>
+          </div>
+        </form>
       </div>
     </div>
     

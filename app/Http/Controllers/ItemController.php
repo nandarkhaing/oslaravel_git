@@ -152,6 +152,8 @@ class ItemController extends Controller
      */
     public function destroy(Item $item)
     {
-        //
+        // dd($item);
+        $item->delete();
+        return redirect()->route('items.index');
     }
 }

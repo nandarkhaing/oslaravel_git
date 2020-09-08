@@ -4,13 +4,16 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Item;
+use App\Brand;
 
 class PageController extends Controller
 {
     public function mainfun($value='')
     {   
-        $items=Item::all()->take(4);
-    	return view('frontend.main',compact('items'));
+        $items=Item::all();//->take(4)
+        $brands=Brand::all();
+         // $categories = Category::all();
+    	return view('frontend.main',compact('items','brands'));
     }
 
     public function loginfun($value='')
@@ -23,19 +26,22 @@ class PageController extends Controller
     	return view('frontend.register');
     }
 
-    public function brandfun($value='')
+    public function brandfun($id)
     {
-        return view('frontend.brand');
+        $brand=Brand::find($id);
+        return view('frontend.brand',compact('brand'));
     }
 
-    public function itemdetailfun($value='')
+    public function itemdetailfun($id)
     {
-        return view('frontend.itemdetail');
+        $item=Item::find($id);
+        return view('frontend.itemdetail',compact('item'));
     }
 
-    public function promotionfun($value='')
+    public function promotionfun($id)
     {
-        return view('frontend.promotion');
+        $item=Item::find($id);
+        return view('frontend.promotion',compact('item'));
     }
 
     public function shoppingcartfun($value='')
@@ -43,9 +49,18 @@ class PageController extends Controller
         return view('frontend.shoppingcart');
     }
 
-    public function subcategoryfun($value='')
+    public function subcategoryfun($id)
     {
-        return view('frontend.subcategory');
+       // $subcategory = Subcategory::find($id);
+       // $subcategory->setRelation('items', $subcategory->items()->paginate(3));
+    return view('frontend.subcategory');
     }
+
+    // public function itemsbycategoryfun($id)
+    // {
+    //     // $category = Category::find($id);
+    //     // return view('frontend.itemsbycategory',compact('category'));
+       
+    // }
 }
 

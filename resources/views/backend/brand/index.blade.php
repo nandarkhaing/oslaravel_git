@@ -1,8 +1,8 @@
 @extends('backend.master')
 @section('content')
 <div class="d-sm-flex align-items-center justify-content-between mb-4">
-			<h1 class="h3 mx-1 mb-0 text-gray-800">Brands List</h1>
-			<a href="{{route('brands.create')}}" class="mx-1 btn btn-info">Add New</a>		
+	<h1 class="h3 mx-1 mb-0 text-gray-800">Brands List</h1>
+	<a href="{{route('brands.create')}}" class="mx-1 btn btn-info">Add New</a>		
 </div>
 
 <div class="row">
@@ -26,7 +26,11 @@
 					<td>
 						<a href="" class="btn btn-info">Detail</a>
 						<a href="{{route('brands.edit',$brand->id)}}" class="btn btn-warning">Edit</a>
-						<a href="" class="btn btn-danger">Delete</a>
+						<form action="{{route('brands.destroy',$brand->id)}}" onsubmit="return confirm('Are you sure to delete?')" class="d-inline-block" method="POST">
+							@csrf
+							@method("DELETE")
+							<button class="btn btn-danger" type="submit">DELETE</button>
+						</form>
 					</td>
 				</tr>
 				@endforeach

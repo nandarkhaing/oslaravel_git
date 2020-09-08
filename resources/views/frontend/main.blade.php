@@ -113,6 +113,7 @@
                 <div class="MultiCarousel-inner">
                     @foreach($items as $item)
                     <div class="item">
+                      <a href="{{route('itemdetailpage',$item->id)}}">
                         <div class="pad15">
                           <img src="{{ asset($item->photo)}}" class="img-fluid">
                             <p class="text-truncate">{{$item->name}}</p>
@@ -134,6 +135,7 @@
                 <a href="#" class="addtocartBtn text-decoration-none" data-id="{{$item->id}}" data-name="{{$item->name}}" data-photo="{{$item->photo}}" data-price="{{$item->price}}" data-discount="{{$item->discount}}">Add to Cart</a>
 
                         </div>
+                        </a>
                     </div>
                     @endforeach
 
@@ -143,6 +145,50 @@
             </div>
         </div>
     </div>
+
+    {{-- <div class="row mt-5">
+      <h1> Discount Items </h1>
+    </div>
+
+      <!-- Disocunt Item -->
+    <div class="row">
+      <div class="col-12">
+        <div class="MultiCarousel" data-items="1,3,5,6" data-slide="1" id="MultiCarousel"  data-interval="1000">
+                <div class="MultiCarousel-inner">
+                    @foreach($items as $item)
+                    <div class="item">
+                      <a href="{{route('promotionpage',$item->id)}}">
+                        <div class="pad15">
+                          <img src="{{ asset($item->photo)}}" class="img-fluid">
+                            <p class="text-truncate">{{$item->name}}</p>
+                            <p class="item-price">
+                              <strike>{{$item->price}} Ks </strike> 
+                              <span class="d-block">{{$item->discount}} Ks</span>
+                            </p>
+
+                <div class="star-rating">
+                  <ul class="list-inline">
+                    <li class="list-inline-item"><i class='bx bxs-star' ></i></li>
+                    <li class="list-inline-item"><i class='bx bxs-star' ></i></li>
+                    <li class="list-inline-item"><i class='bx bxs-star' ></i></li>
+                    <li class="list-inline-item"><i class='bx bxs-star' ></i></li>
+                    <li class="list-inline-item"><i class='bx bxs-star-half' ></i></li>
+                  </ul>
+                </div>
+
+                <a href="#" class="addtocartBtn text-decoration-none" data-id="{{$item->id}}" data-name="{{$item->name}}" data-photo="{{$item->photo}}" data-price="{{$item->price}}" data-discount="{{$item->discount}}">Add to Cart</a>
+
+                        </div>
+                        </a>
+                    </div>
+                    @endforeach
+
+                    
+                <button class="btn btnMain leftLst"><</button>
+                <button class="btn btnMain rightLst">></button>
+            </div>
+        </div>
+    </div> --}}
 
     <!-- Flash Sale Item -->
     <div class="row mt-5">
@@ -727,68 +773,30 @@
 
       <!-- Brand Store -->
       <div class="row mt-5">
-      <h1> Top Brand Stores </h1>
+      <h1> Top Brand Store </h1>
       </div>
 
       <!-- Brand Store Item -->
-      <section class="customer-logos slider mt-5">
+      {{-- <section class="customer-logos slider mt-5"> --}}
+
+   
+ <div class="row">
+  <div class="col-12">
+      @foreach($brands as $brand)
           <div class="slide">
-            <a href="">
-              <img src="{{ asset('front/image/brand/loacker_logo.jpg')}}">
+            <a href="{{route('brandpage',$brand->id)}}">
+              {{-- <p>{{$brand->name}}</p> --}}
+              <img src="{{ asset($brand->photo)}}" class="img-fluid w-25">
             </a>
           </div>
-          
-          <div class="slide">
-            <a href="">
-              <img src="{{ asset('front/image/brand/lockandlock_logo.png')}}">
-            </a>
-          </div>
-          
-          <div class="slide">
-            <a href="">
-              <img src="{{ asset('front/image/brand/apple_logo.png')}}">
-            </a>
-          </div>
-          
-          <div class="slide">
-            <a href="">
-              <img src="{{ asset('front/image/brand/giordano_logo.png')}}">
-            </a>
-          </div>
-          
-          <div class="slide">
-            <a href="">
-              <img src="{{ asset('front/image/brand/saisai_logo.png')}}">
-            </a>
-          </div>
-          
-          <div class="slide">
-            <a href="">
-              <img src="{{ asset('front/image/brand/brands_logo.png')}}">
-            </a>  
-          </div>
-          
-          <div class="slide">
-            <a href="">
-              <img src="{{ asset('front/image/brand/acer_logo.png')}}">
-            </a>
-          </div>
-          
-          <div class="slide">
-            <a href="">
-              <img src="{{ asset('front/image/brand/bella_logo.png')}}">
-            </a>
-          </div>
-          
-          <div class="slide">
-            <a href="">
-              <img src="{{ asset('front/image/brand/ariel_logo.png')}}">
-            </a>
-          </div>
-      </section>
+          @endforeach
+      {{-- </section> --}}
+
 
       <div class="whitespace d-xl-block d-lg-block d-md-none d-sm-none d-none"></div>
   </div>
+</div>
+  
 @endsection
 
 @section('script')

@@ -49,7 +49,10 @@
 				
 				<div class="row">
 					<div class="col-md-6">
-						<textarea class="notes"  placeholder="Your Note Here!"></textarea>
+						<textarea class="notes" name="note" placeholder="Your Note Here!"></textarea>
+						@error('note')
+						<label class="text-danger">Required Note</label>
+						@enderror
 					</div>
 					<div class="col-md-6">
 						@role('Customer')
